@@ -37,9 +37,9 @@ const Chatbot: React.FC = () => {
       {/* Chat iframe */}
       {isChatVisible && (
         <iframe
-          src={
-            isChatVisible ? 'https://chat-ui-eight-mu.vercel.app/' : undefined
-          } // Replace with your chatbot URL
+          //   src={
+          //     isChatVisible ? 'https://chat-ui-eight-mu.vercel.app/' : undefined
+          //   } // Replace with your chatbot URL
           style={{
             width: iframeWidth,
             height: iframeHeight,
