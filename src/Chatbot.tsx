@@ -111,24 +111,22 @@ const Chatbot: React.FC = () => {
       </div> */}
 
       {/* Chat iframe */}
-      {isChatVisible && (
-        <iframe
-          //   src={
-          //     isChatVisible ? 'https://chat-ui-eight-mu.vercel.app/' : undefined
-          //   } // Replace with your chatbot URL
-          style={{
-            width: iframeWidth,
-            height: iframeHeight,
-            position: 'fixed',
-            border: '1px solid #ccc',
-            backgroundColor: 'white',
-            zIndex: 9999,
-            bottom: '90px',
-            right: '20px',
-            display: isChatVisible ? 'block' : 'none',
-          }}
-        ></iframe>
-      )}
+      <iframe
+        //   src={
+        //     isChatVisible ? 'https://chat-ui-eight-mu.vercel.app/' : undefined
+        //   } // Replace with your chatbot URL
+        style={{
+          width: iframeWidth,
+          height: iframeHeight,
+          position: 'fixed',
+          border: '1px solid #ccc',
+          backgroundColor: 'white',
+          zIndex: 9999,
+          bottom: '90px',
+          right: '20px',
+          // display: isChatVisible ? 'block' : 'none',
+        }}
+      ></iframe>
       {isChatVisible && (
         <div
           style={{
