@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Chatbot: React.FC = () => {
   const [isChatVisible, setIsChatVisible] = useState(false)
@@ -7,10 +7,87 @@ const Chatbot: React.FC = () => {
   const iframeWidth = '400px'
   const iframeHeight = '600px'
 
+  useEffect(() => {
+    // Standard dimensions
+    const iframeWidth = '400px'
+    const iframeHeight = '600px'
+
+    // Create iframe
+    const iframe = document.createElement('iframe')
+    iframe.style.width = iframeWidth
+    iframe.style.height = iframeHeight
+    iframe.style.position = 'fixed'
+    iframe.style.border = '1px solid #ccc'
+    iframe.style.backgroundColor = 'white'
+    iframe.style.zIndex = '9999'
+    iframe.style.bottom = '90px'
+    iframe.style.right = '20px' // Fixed to bottom-right
+    iframe.style.display = 'none' // Initially hidden
+
+    document.body.appendChild(iframe)
+
+    // Create toggle button
+    const toggleButton = document.createElement('div')
+    toggleButton.style.width = '40px'
+    toggleButton.style.height = '40px'
+    toggleButton.style.borderRadius = '50%'
+    toggleButton.style.backgroundColor = '#007bff'
+    toggleButton.style.position = 'fixed'
+    toggleButton.style.zIndex = '10000'
+    toggleButton.style.cursor = 'pointer'
+    toggleButton.style.display = 'flex'
+    toggleButton.style.alignItems = 'center'
+    toggleButton.style.justifyContent = 'center'
+    toggleButton.style.bottom = '40px'
+    toggleButton.style.right = '20px' // Fixed to bottom-right
+
+    const chatIcon = document.createElement('span')
+    chatIcon.innerHTML = '&#128172;' // Chat icon (speech balloon)
+    chatIcon.style.fontSize = '24px'
+    chatIcon.style.color = 'white'
+
+    const closeIcon = document.createElement('span')
+    closeIcon.innerHTML = '&#10006;' // Close icon
+    closeIcon.style.fontSize = '24px'
+    closeIcon.style.color = 'white'
+    closeIcon.style.display = 'none' // Initially hidden
+
+    toggleButton.appendChild(chatIcon)
+    toggleButton.appendChild(closeIcon)
+
+    // Append toggle button to the body
+    document.body.appendChild(toggleButton)
+
+    // Toggle functionality
+    toggleButton.addEventListener('click', () => {
+      setIsChatVisible(!isChatVisible)
+
+      //   if (iframe.style.display === 'none') {
+      //     setIsChatVisible(!setIsChatVisible)
+
+      //     iframe.style.display = 'block'
+      //     chatIcon.style.display = 'none'
+      //     closeIcon.style.display = 'flex'
+      //   } else {
+      //     setIsChatVisible(!setIsChatVisible)
+
+      //     iframe.style.display = 'none'
+      //     chatIcon.style.display = 'flex'
+      //     closeIcon.style.display = 'none'
+      //   }
+    })
+
+    // Clean up on component unmount
+    return () => {
+      document.body.removeChild(iframe)
+      document.body.removeChild(toggleButton)
+    }
+  }, [isChatVisible])
+
   return (
     <>
       {/* Toggle Button */}
-      <div
+      {/* <div
         onClick={() => setIsChatVisible(!isChatVisible)}
         style={{
           width: '40px',
@@ -32,7 +109,7 @@ const Chatbot: React.FC = () => {
         ) : (
           <span style={{ fontSize: '24px', color: 'white' }}>&#128172;</span> // Chat Icon
         )}
-      </div>
+      </div> */}
 
       {/* Chat iframe */}
       {isChatVisible && (
