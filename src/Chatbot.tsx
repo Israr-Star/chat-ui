@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Chatbot: React.FC = () => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(false)
 
   return (
     <>
@@ -13,7 +13,7 @@ const Chatbot: React.FC = () => {
           borderRadius: '50%',
           backgroundColor: '#007bff',
           position: 'fixed',
-          bottom: '40px',
+          bottom: '0',
           right: '20px',
           zIndex: 10000,
           cursor: 'pointer',
@@ -35,7 +35,7 @@ const Chatbot: React.FC = () => {
         <div
           style={{
             position: 'fixed',
-            bottom: '90px',
+            bottom: '0',
             right: '20px',
             width: '400px',
             height: '600px',
@@ -92,7 +92,7 @@ const Chatbot: React.FC = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Chatbot;
+export default Chatbot
