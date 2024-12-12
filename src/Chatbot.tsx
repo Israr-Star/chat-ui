@@ -120,7 +120,7 @@ const Chatbot: React.FC = () => {
           height: iframeHeight,
           position: 'fixed',
           border: '1px solid #ccc',
-          backgroundColor: 'white',
+          backgroundColor: 'red',
           zIndex: 9999,
           bottom: '90px',
           right: '20px',

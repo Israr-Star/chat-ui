@@ -3,7 +3,7 @@
   const script = document.createElement("script");
 
   // Set the src attribute to the provided URL
-  script.src = "https://chat-ui-gpwl.vercel.app/";
+  script.src = "https://chat-ui-dj7x.vercel.app/";
 
   // Optionally, you can set the type and async attribute
   script.type = "text/javascript";
