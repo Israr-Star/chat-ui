@@ -19,7 +19,7 @@
   iframe.style.position = "fixed";
   iframe.style.border = "none";
   iframe.style.zIndex = "9999";
-  iframe.style.display = "none"; // Initially hidden
+  //   iframe.style.display = "none"; // Initially hidden
 
   // Set position
   if (chatbotConfig.position === "bottom-right") {
