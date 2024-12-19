@@ -19,6 +19,7 @@
   iframe.style.position = "fixed";
   iframe.style.border = "none";
   iframe.style.zIndex = "9999";
+  iframe.style.backgroundColor = "red";
   //   iframe.style.display = "none"; // Initially hidden
 
   // Set position
